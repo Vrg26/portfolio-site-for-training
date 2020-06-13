@@ -96,4 +96,9 @@ export default {};
 .social-links__item:last-of-type {
   margin-right: 0px;
 }
+@media screen and (max-width: 425px) {
+  .social-links__icon {
+    width: 16px;
+  }
+}
 </style>

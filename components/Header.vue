@@ -33,6 +33,12 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 40px;
+}
+@media screen and (max-width: 425px) {
+  .header {
+    padding-top: 30px;
+  }
 }
 </style>
