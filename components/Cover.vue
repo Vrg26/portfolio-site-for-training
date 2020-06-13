@@ -1,25 +1,31 @@
 <template>
-  <section class="cover">
-    <div class="cover__text-content">
-      <p class="cover__freelancer">Фрилансер</p>
-      <h1 class="cover__title">Петр Федоров</h1>
-      <main-text class="cover__text"
-        >разрабатываю сайты для малого и среднего бизнеса. У меня можно заказать
-        дизайн и верстку небольшого сайта или интернет-магазина</main-text
-      >
-      <cover-button class="cover__button">Бесплатная консультация</cover-button>
-    </div>
-    <img class="cover__avatar" src="/avatar.png" alt="avatar" />
-  </section>
+  <container>
+    <section class="cover">
+      <div class="cover__text-content">
+        <p class="cover__freelancer">Фрилансер</p>
+        <h1 class="cover__title">Петр Федоров</h1>
+        <main-text class="cover__text">
+          разрабатываю сайты для малого и среднего бизнеса. У меня можно
+          заказать дизайн и верстку небольшого сайта или интернет-магазина
+        </main-text>
+        <cover-button class="cover__button"
+          >Бесплатная консультация</cover-button
+        >
+      </div>
+      <img class="cover__avatar" src="/avatar.png" alt="avatar" />
+    </section>
+  </container>
 </template>
 
 <script>
 import MainText from '@/components/MainText';
 import MainButton from '@/components/MainButton';
+import Container from '@/components/Container';
 export default {
   components: {
     'main-text': MainText,
     'cover-button': MainButton,
+    container: Container,
   },
 };
 </script>
