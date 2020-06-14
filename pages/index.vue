@@ -2,6 +2,7 @@
   <div class="page">
     <header-site />
     <cover />
+    <container />
   </div>
 </template>
 
