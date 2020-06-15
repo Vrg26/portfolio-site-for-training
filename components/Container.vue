@@ -1,21 +1,11 @@
 <template>
   <div class="container">
-    <slot>
-      <main-title />
-      <reasons />
-    </slot>
+    <slot></slot>
   </div>
 </template>
 
 <script>
-import Reasons from '@/components/Reasons';
-import MainTitle from '@/components/MainTitle';
-export default {
-  components: {
-    reasons: Reasons,
-    'main-title': MainTitle,
-  },
-};
+export default {};
 </script>
 
 <style scoped>

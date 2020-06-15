@@ -2,19 +2,22 @@
   <div class="page">
     <header-site />
     <cover />
-    <container />
+    <reasons />
+    <my-footer />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header';
 import Cover from '@/components/Cover';
-import Container from '@/components/Container';
+import Reasons from '@/components/Reasons';
+import Footer from '@/components/Footer';
 export default {
   components: {
     'header-site': Header,
     cover: Cover,
-    container: Container,
+    reasons: Reasons,
+    'my-footer': Footer,
   },
 };
 </script>

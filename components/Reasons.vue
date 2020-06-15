@@ -1,6 +1,7 @@
 <template>
   <div class="reasons">
-    <!-- <reason /> -->
+    <main-title class="main-title">Со мной удобно работать</main-title>
+
     <div class="reasons__block">
       <img class="reasons__icon" :src="reasons[0].icon" alt />
       <h2 class="reasons__title">{{ reasons[0].name }}</h2>
@@ -35,11 +36,14 @@
 </template>
 
 <script>
-// import Reason from '@/components/Reason';
+import MainTitle from '@/components/MainTitle';
+import Container from '@/components/Container';
 export default {
-  // components: {
-  //   reason: Reason,
-  // },
+  components: {
+    'main-title': MainTitle,
+    container: Container,
+  },
+
   data() {
     return {
       reasons: [
@@ -96,7 +100,11 @@ export default {
   color: white;
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
 }
+
 .reasons__block {
   width: 300px;
   margin-bottom: 100px;
@@ -107,7 +115,7 @@ export default {
 }
 .reasons__title {
   width: 300px;
-  height: 28.24px;
+  height: 30px;
   padding-top: 22px;
 
   font-style: normal;

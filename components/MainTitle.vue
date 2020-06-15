@@ -1,7 +1,7 @@
 <template>
-  <div class="content">
-    <h2 class="content__main-title">Со мной удобно работать</h2>
-  </div>
+  <h2 class="main-title">
+    <slot></slot>
+  </h2>
 </template>
 
 <script>
@@ -9,8 +9,8 @@ export default {};
 </script>
 
 <style scoped>
-.content__main-title {
-  width: 500px;
+.main-title {
+  width: 700px;
 
   padding-top: 64px;
   padding-bottom: 80px;
