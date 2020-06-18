@@ -1,10 +1,15 @@
 <template>
+  <!-- Цвет фона должен быть другой -->
+  <!-- Надо сделать адаптив -->
   <div class="reasons">
+    <!-- Сделай этот компонент адаптивным -->
     <main-title class="main-title">Со мной удобно работать</main-title>
-
+    <!-- Это стоит сделать списком -->
+    <!-- Посмотри лекцию и почитай по v-for -->
     <div class="reasons__block">
       <img class="reasons__icon" :src="reasons[0].icon" alt />
       <h2 class="reasons__title">{{ reasons[0].name }}</h2>
+      <!-- Я сделал компонет MainText, ты можешь его использовать тут, он по font-size адаптивный уже -->
       <p class="reasons__text">{{ reasons[0].text }}</p>
     </div>
     <div class="reasons__block">
@@ -37,6 +42,7 @@
 
 <script>
 import MainTitle from '@/components/MainTitle';
+// Ты не используешь этот компонент, посмотри, как я это делаю в cover
 import Container from '@/components/Container';
 export default {
   components: {
@@ -101,6 +107,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
+  /* У нас есть компонент container */
   max-width: 950px;
   margin: 0 auto;
 }
