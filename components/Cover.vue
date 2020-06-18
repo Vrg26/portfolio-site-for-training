@@ -1,6 +1,6 @@
 <template>
-  <container>
-    <section class="cover">
+  <section class="cover">
+    <container class="cover__container">
       <div class="cover__text-content">
         <p class="cover__freelancer">Фрилансер</p>
         <h1 class="cover__title">Петр Федоров</h1>
@@ -12,9 +12,11 @@
           >Бесплатная консультация</cover-button
         >
       </div>
-      <img class="cover__avatar" src="/avatar.png" alt="avatar" />
-    </section>
-  </container>
+      <div class="cover__container-avatar">
+        <img class="cover__avatar" src="/avatar.png" alt="avatar" />
+      </div>
+    </container>
+  </section>
 </template>
 
 <script>
@@ -30,7 +32,7 @@ export default {
 };
 </script>
 <style scoped>
-.cover {
+.cover__container {
   display: flex;
   justify-content: space-between;
 }
@@ -55,9 +57,51 @@ export default {
 .cover__button {
   margin-top: 40px;
 }
+.cover__container-avatar {
+  max-width: 362px;
+}
 .cover__avatar {
-  width: 362px;
+  width: 100%;
   border-radius: 50%;
   border: 11px solid #fff;
+}
+@media screen and (max-width: 768px) {
+  .cover__container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+  .cover__title {
+    font-size: 36px;
+    line-height: 38px;
+  }
+  .cover__container-avatar {
+    max-width: 262px;
+  }
+  .cover__avatar {
+    border: 8px solid #fff;
+  }
+}
+@media screen and (max-width: 425px) {
+  .cover__title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 5px;
+  }
+  .cover__text {
+    margin-top: 15px;
+  }
+  .cover__avatar {
+    border: 5px solid #fff;
+  }
+  .cover__container-avatar {
+    max-width: 107px;
+  }
+  .cover__freelancer {
+    font-size: 16px;
+    line-height: 27px;
+    color: #ffbb01;
+    margin-top: 20px;
+  }
 }
 </style>

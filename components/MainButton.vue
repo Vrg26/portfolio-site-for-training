@@ -24,4 +24,16 @@ export default {};
   text-align: center;
   text-transform: uppercase;
 }
+@media screen and (max-width: 728px) {
+  .button {
+    width: 100%;
+    padding: 24px 28px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .button {
+    font-size: 10px;
+    padding: 14px 28px;
+  }
+}
 </style>
