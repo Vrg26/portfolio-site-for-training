@@ -1,6 +1,5 @@
 <template>
   <div class="reason">
-    <!-- Компонент пустой -->
     <!-- <div class="offer">
       <img src="Reason-img/offer-img.svg" alt class="reason__icon" />
       <h2 class="reason__title">По договору</h2>
