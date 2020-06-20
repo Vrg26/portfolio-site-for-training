@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <header-site />
-    <cover />
+    <cover class="page__cover" />
     <reasons />
     <my-footer />
   </div>
@@ -21,4 +21,13 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.page__cover {
+  margin-top: 140px;
+}
+@media screen and (max-width: 768px) {
+  .page__cover {
+    margin-top: 55px;
+  }
+}
+</style>

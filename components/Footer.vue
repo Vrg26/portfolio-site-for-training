@@ -19,9 +19,7 @@
             class="footer__input footer__input-namePhone"
             placeholder="Ваш телефон"
           />
-          <main-button>
-            <a class="button__link" href="#">Бесплатная консультация</a>
-          </main-button>
+          <main-button class="button__big">Бесплатная консультация</main-button>
         </div>
 
         <div class="footer__text">
@@ -115,7 +113,7 @@ export default {
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  box-shadow: -3px 3px 0 1px #e7a61a;
+  box-shadow: -5px 5px 0 1px #e7a61a;
   border-radius: 5px;
   padding: 56px 0 47px;
 }
@@ -149,10 +147,8 @@ export default {
   border: blue 2px solid;
 }
 
-.button__link {
+.button__big {
   padding: 0 55px;
-  color: #000;
-  text-decoration: none;
 }
 .button__link:hover {
   text-decoration: underline blue;
