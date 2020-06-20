@@ -21,4 +21,11 @@ export default {};
 
   color: #ffffff;
 }
+@media screen and (max-width: 425px) {
+  .main__title {
+    width: 270px;
+    font-size: 19px;
+    line-height: 22px;
+  }
+}
 </style>
