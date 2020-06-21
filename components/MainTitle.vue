@@ -10,8 +10,6 @@ export default {};
 
 <style scoped>
 .main-title {
-  width: 700px;
-
   padding-top: 64px;
   padding-bottom: 80px;
 
@@ -21,9 +19,15 @@ export default {};
 
   color: #ffffff;
 }
+
+@media screen and (max-width: 556px) {
+  .main__title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
 @media screen and (max-width: 425px) {
   .main__title {
-    width: 270px;
     font-size: 19px;
     line-height: 22px;
   }

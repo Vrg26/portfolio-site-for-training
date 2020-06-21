@@ -1,30 +1,37 @@
 <template>
-  <container>
-    <!-- Цвет фона должен быть другой -->
-    <!-- Надо сделать адаптив -->
-    <div class="reasons">
-      <!-- Сделай этот компонент адаптивным -->
-      <main-title class="main-title">Со мной удобно работать</main-title>
-      <!-- Это стоит сделать списком -->
-      <!-- Посмотри лекцию и почитай по v-for -->
-      <div class="reasons__block">
-        <img class="reasons__icon" :src="reasons[0].icon" alt />
-        <h2 class="reasons__title">{{ reasons[0].name }}</h2>
-        <!-- Я сделал компонет MainText, ты можешь его использовать тут, он по font-size адаптивный уже -->
-        <p class="reasons__text">{{ reasons[0].text }}</p>
+  <section class="content">
+    <container>
+      <!-- Надо сделать адаптив -->
+      <div class="reasons">
+        <!-- Сделай этот компонент адаптивным -->
+        <main-title class="main-title">Со мной удобно работать</main-title>
+        <!-- Это стоит сделать списком -->
+        <!-- Посмотри лекцию и почитай по v-for -->
+        <ul class="reasons__block">
+          <li>
+            <img class="reasons__icon" :src="reasons[0].icon" alt />
+          </li>
+          <li>
+            <h2 class="reasons__title">{{ reasons[0].name }}</h2>
+          </li>
+          <li>
+            <main-text class="reasons__text">{{ reasons[0].text }}</main-text>
+          </li>
+        </ul>
       </div>
-    </div>
-  </container>
+    </container>
+  </section>
 </template>
 
 <script>
 import MainTitle from '@/components/MainTitle';
-// Ты не используешь этот компонент, посмотри, как я это делаю в cover
+import MainText from '@/components/MainText';
 import Container from '@/components/Container';
 export default {
   components: {
     'main-title': MainTitle,
     container: Container,
+    'main-text': MainText,
   },
 
   data() {
@@ -80,19 +87,22 @@ export default {
 
 <style scoped>
 .reasons {
+  margin-top: 50px;
   color: white;
   display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  /* У нас есть компонент container */
-  max-width: 950px;
-  margin: 0 auto;
+  flex-flow: column nowrap;
+}
+.content {
+  background-color: #141f35;
 }
 
 .reasons__block {
   width: 33%;
   margin-bottom: 100px;
+  padding-left: 0;
+  list-style: none;
 }
+
 .reasons__icon {
   width: 52px;
   height: 51px;
@@ -112,7 +122,6 @@ export default {
 @media screen and (max-width: 950px) {
   .reasons {
     max-width: 900px;
-    padding-left: 20px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -155,17 +164,6 @@ export default {
 @media screen and (max-width: 425px) {
   .reasons__title {
     font-size: 18px;
-    line-height: 28px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .reasons__text {
-    width: 270px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .reasons__text {
-    font-size: 14px;
     line-height: 28px;
   }
 }
