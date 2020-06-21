@@ -1,5 +1,5 @@
 <template>
-  <h2 class="main-title">
+  <h2 class="main__title">
     <slot></slot>
   </h2>
 </template>
@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-.main-title {
+.main__title {
   padding-top: 64px;
   padding-bottom: 80px;
 

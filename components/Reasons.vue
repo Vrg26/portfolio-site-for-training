@@ -8,14 +8,12 @@
         <!-- Это стоит сделать списком -->
         <!-- Посмотри лекцию и почитай по v-for -->
         <ul class="reasons__block">
-          <li>
-            <img class="reasons__icon" :src="reasons[0].icon" alt />
-          </li>
-          <li>
-            <h2 class="reasons__title">{{ reasons[0].name }}</h2>
-          </li>
-          <li>
-            <main-text class="reasons__text">{{ reasons[0].text }}</main-text>
+          <li class="reasons__item" v-for="reason in reasons" :key="reason.id">
+            <reason
+              :icon="reason.icon"
+              :name="reason.name"
+              :text="reason.text"
+            />
           </li>
         </ul>
       </div>
@@ -27,11 +25,13 @@
 import MainTitle from '@/components/MainTitle';
 import MainText from '@/components/MainText';
 import Container from '@/components/Container';
+import Reason from '@/components/Reason';
 export default {
   components: {
     'main-title': MainTitle,
     container: Container,
     'main-text': MainText,
+    reason: Reason,
   },
 
   data() {
@@ -91,32 +91,20 @@ export default {
   color: white;
   display: flex;
   flex-flow: column nowrap;
+  padding-bottom: 100px;
 }
 .content {
   background-color: #141f35;
 }
 
 .reasons__block {
-  width: 33%;
-  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(auto, auto);
+  grid-column-gap: 16px;
+  grid-row-gap: 60px;
   padding-left: 0;
   list-style: none;
-}
-
-.reasons__icon {
-  width: 52px;
-  height: 51px;
-}
-.reasons__title {
-  padding-top: 22px;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-}
-.reasons__text {
-  padding-top: 35px;
 }
 
 @media screen and (max-width: 950px) {
@@ -138,33 +126,25 @@ export default {
     margin-right: 20px;
   }
 }
-
-@media screen and (max-width: 950px) {
-  .reasons__block {
-    width: 33%;
-  }
-}
-@media screen and (max-width: 850px) {
-  .reasons__block {
-    margin-right: 15px;
-  }
-}
-@media screen and (max-width: 675px) {
-  .reasons__block {
-    margin-bottom: 50px;
-  }
-}
-
 @media screen and (max-width: 425px) {
-  .reasons__title {
-    width: 270px;
+  .reasons {
+    padding-bottom: 60px;
   }
 }
 
-@media screen and (max-width: 425px) {
-  .reasons__title {
-    font-size: 18px;
-    line-height: 28px;
+@media screen and (max-width: 768px) {
+  .reasons__block {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    grid-column-gap: 16px;
+    grid-row-gap: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .reasons__block {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(auto, auto);
+    grid-row-gap: 60px;
   }
 }
 </style>
